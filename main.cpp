@@ -29,11 +29,6 @@ int getSum(int* a, int n, int start, int end){
 }
 
 
-void getNgetQ(int *n, int *q){
-    cin >> *n;
-    cin >> *q;
-
-}
 int main() {
     
     int n = 0;
@@ -41,7 +36,7 @@ int main() {
     cin >> n;
     cin >> q;
     
-    getNgetQ( &n, &q);
+
 
     cout << "N: " << n << " Q: " << q <<endl;
 
