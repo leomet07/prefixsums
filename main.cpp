@@ -22,14 +22,21 @@ void printArray(int* array, int length) {
 
 int main() {
     
-    int a[] = {0, 1 , 1, 0 , 1};
+    int a[] = {3 ,2 ,4 ,5 ,1 ,1 ,5 ,3};
     int n = sizeof(a) / sizeof(int);
     
     int pre[n + 1];
     genPreLinear(a, n,  pre);
 
+    int s = 2;
+    // int s = 0;
+    int e = 4;
+
+    cout << "Sol: " << pre[e] - pre[s  -1 ] << endl;
     
     printArray(pre, n + 1);
 	cout << "Prefix sums" << endl;
     return 0;
 }
+
+
