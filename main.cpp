@@ -29,33 +29,18 @@ int getSum(int* a, int n, int start, int end){
 }
 
 
-void getNgetQ(string s1, int *n, int *q){
-    string buffer = "";
-    int buffer_resets = 0;
-    for (int i = 0; i < s1.length(); i++){
-        char c = s1[i];
-        buffer = buffer + c;
-
-        if (c == ' ' || i + 1 == s1.length()){
-            buffer_resets += 1;
-            if (buffer_resets == 1){
-                *n = stoi(buffer);
-            } else if (buffer_resets == 2){
-                *q = stoi(buffer);
-            }
-            buffer = "";
-        }   
-    }
+void getNgetQ(int *n, int *q){
+    cin >> *n;
+    cin >> *q;
 
 }
 int main() {
-    string s1;
-    getline(cin , s1);
     
     int n = 0;
     int q = 0;
     
-    getNgetQ(s1, &n, &q);
+    
+    getNgetQ( &n, &q);
 
     cout << "N: " << n << " Q: " << q <<endl;
 
