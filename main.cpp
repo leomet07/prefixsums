@@ -19,22 +19,53 @@ void printArray(int* array, int length) {
     }
 }
 
-
-int main() {
+int getSum(int* a, int n, int start, int end){
     
-    int a[] = {3 ,2 ,4 ,5 ,1 ,1 ,5 ,3};
-    int n = sizeof(a) / sizeof(int);
     
     int pre[n + 1];
     genPreLinear(a, n,  pre);
 
-    int s = 2;
-    // int s = 0;
-    int e = 4;
+    return pre[end] - pre[start -1];
+}
 
-    cout << "Sol: " << pre[e] - pre[s  -1 ] << endl;
+
+void getNgetQ(string s1, int *n, int *q){
+    string buffer = "";
+    int buffer_resets = 0;
+    for (int i = 0; i < s1.length(); i++){
+        char c = s1[i];
+        buffer = buffer + c;
+
+        if (c == ' ' || i + 1 == s1.length()){
+            buffer_resets += 1;
+            if (buffer_resets == 1){
+                *n = stoi(buffer);
+            } else if (buffer_resets == 2){
+                *q = stoi(buffer);
+            }
+            buffer = "";
+        }   
+    }
+
+}
+int main() {
+    string s1;
+    getline(cin , s1);
     
-    printArray(pre, n + 1);
+    int n = 0;
+    int q = 0;
+    
+    getNgetQ(s1, &n, &q);
+
+    cout << "N: " << n << " Q: " << q <<endl;
+
+
+    
+    int a[] = {3 ,2 ,4 ,5 ,1 ,1 ,5 ,3};
+    int len = sizeof(a) / sizeof(int);
+    int sum = getSum(a, len, 2 , 4);
+    cout << "Sum: " << sum << endl;
+
 	cout << "Prefix sums" << endl;
     return 0;
 }
