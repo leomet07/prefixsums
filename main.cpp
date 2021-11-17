@@ -10,15 +10,6 @@ void genPreLinear(const int* a, int n,  int* pre ){
     }
 }
 
-void printArray(int* array, int length) {
-    if (!array) // if user passed in a null pointer for array, bail out early!
-        return;
-
-    for (int index = 0; index < length; ++index){
-        cout << array[index] << endl;
-    }
-}
-
 int getSum(int* a, int n, int start, int end){
     
     
@@ -36,18 +27,27 @@ int main() {
     cin >> n;
     cin >> q;
     
+    int array[n];
+
+    for (int i = 0; i < n; i++){
+        cin  >> array[i];
+    }
+
+    for (int j = 0; j < q; j++){
+        int start = 0;
+        int end = 0;
+
+        cin >> start;
+        cin >> end;
+
+        
+        int sum = getSum(array, n, start , end);
+        cout <<  sum << endl;
+
+    }
 
 
-    cout << "N: " << n << " Q: " << q <<endl;
-
-
-    
-    int a[] = {3 ,2 ,4 ,5 ,1 ,1 ,5 ,3};
-    int len = sizeof(a) / sizeof(int);
-    int sum = getSum(a, len, 2 , 4);
-    cout << "Sum: " << sum << endl;
-
-	cout << "Prefix sums" << endl;
+	// cout << "Prefix sums" << endl;
     return 0;
 }
 
