@@ -10,15 +10,6 @@ void genPreLinear(const int* a, int n,  int* pre ){
     }
 }
 
-int getSum(int* a, int n, int start, int end){
-    
-    
-    int pre[n + 1];
-    genPreLinear(a, n,  pre);
-
-    return pre[end] - pre[start -1];
-}
-
 
 int main() {
     
@@ -33,6 +24,9 @@ int main() {
         cin  >> array[i];
     }
 
+    int pre[n + 1];
+    genPreLinear(array, n,  pre);
+
     for (int j = 0; j < q; j++){
         int start = 0;
         int end = 0;
@@ -41,7 +35,7 @@ int main() {
         cin >> end;
 
         
-        int sum = getSum(array, n, start , end);
+        int sum = pre[end] - pre[start -1];
         cout <<  sum << endl;
 
     }
