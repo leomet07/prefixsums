@@ -38,7 +38,8 @@ int main() {
     
     int n = 0;
     int q = 0;
-    
+    cin >> n;
+    cin >> q;
     
     getNgetQ( &n, &q);
 
