@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void genPreLinear(const int* a, int n,  int* pre ){
+void genPreLinear(const long long* a, int n,  long long* pre ){
     pre[0] = 0;
 
     for (int i = 1; i < n + 1; i++){
@@ -14,29 +14,29 @@ void genPreLinear(const int* a, int n,  int* pre ){
 int main() {
     
     int n = 0;
-    int q = 0;
+    long long q = 0;
     cin >> n;
     cin >> q;
     
-    int array[n];
+    long long array[n];
 
     for (int i = 0; i < n; i++){
         cin  >> array[i];
     }
 
-    int pre[n + 1];
+    long long pre[n + 1];
     genPreLinear(array, n,  pre);
 
-    for (int j = 0; j < q; j++){
-        int start = 0;
-        int end = 0;
+    for (long long j = 0; j < q; j++){
+        long long start = 0;
+        long long end = 0;
 
         cin >> start;
         cin >> end;
 
         
-        int sum = pre[end] - pre[start -1];
-        cout <<  sum << endl;
+        long long sum = pre[end] - pre[start -1];
+        cout << sum << endl;
 
     }
 
